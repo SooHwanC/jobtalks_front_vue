@@ -1,0 +1,88 @@
+.login_wrapper {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    // color: white;
+    color: var(--font-color);
+    font-size: 20px;
+    align-items: center;
+    position: absolute;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+
+    @media (max-width: 900px) {
+        font-size: 16px;
+    }
+
+    .dark_btn {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+
+        @media (max-width: 900px) {
+            width: 20px;
+            height: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    .logout_box {
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        border: 2px solid #b6b3b3;
+        width: 100px;
+        height: 50px;
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        z-index: 2;
+
+    }
+
+    .coin_box {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-left: 8px;
+        }
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .login_id_box {
+        cursor: pointer;
+
+        h2 {
+            font-size: 22px;
+        }
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .join_box {
+        margin-right: 32px;
+    }
+
+    .login_id_box {
+        margin-right: 32px;
+    }
+}

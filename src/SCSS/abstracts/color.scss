@@ -1,0 +1,22 @@
+:root {
+    --main-color: #ffffff;
+    --sub-color: #f9f9f9;
+    --font-color: black;
+    --scroll-color: #81a7bf;
+}
+
+[data-theme="dark"] {
+    --main-color: #343541;
+    --sub-color: #202123;
+    --font-color: white;
+    --scroll-color: #a5b0c7;
+
+}
+
+[data-theme="white"] {
+    --main-color: #ffffff;
+    --sub-color: #f9f9f9;
+    --font-color: black;
+    --scroll-color: #81a7bf;
+
+}
