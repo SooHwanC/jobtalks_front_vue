@@ -1,0 +1,130 @@
+.login_main_wrapper {
+    background-color: var(--main-color);
+    display: flex;
+    height: 100vh;
+}
+
+.login_main {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 8rem;
+    font-family: 'Pretendard Variable';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--font-color);
+
+    @media(max-width:600px){
+        margin-top: 3rem;
+        width: 300px;
+    }
+
+
+    .logo_wrapper {
+        width: 100px;
+        height: 100px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+
+
+    .title_wrapper {
+        margin-top: 1.5rem;
+        width: 150px;
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+        }
+
+    }
+
+    .input_wrapper {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+
+        .input_box {
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+
+            }
+
+            input {
+                margin-top: 10px;
+                padding: 10px;
+                border: 1px solid #DEDEDE;
+                border-radius: 10px;
+                font-size: 14px;
+                width: 100%;
+            }
+
+            input:focus {
+                border-color: #86b7fe;
+                box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, .25);
+                outline: 0;
+
+
+            }
+
+        }
+    }
+
+    .submit_btn_box {
+        width: 100%;
+
+        .submit_btx {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 2rem;
+            // margin-bottom: 2rem;
+            background-color: #4491c3;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+    }
+
+
+    .social_login_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        align-items: center;
+
+
+
+
+        .kakao_login_box,
+        .google_login_box {
+
+            img {
+                height: 40px;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+}

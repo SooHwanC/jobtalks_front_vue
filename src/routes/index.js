@@ -1,14 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Main from '../pages/Main.vue';
+import Join from '../pages/Join.vue';
+import Login from '../pages/Login.vue';
+
+const routes = [
+    { path: '/', name: 'Main', component: Main },
+    { path: '/join', name: 'Join', component: Join },
+    { path: '/login', name: 'Login', component: Login }
+]
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
 
 
-export default createRouter({
-    history: createWebHistory(),  // createWebHashHistory() 대신 createWebHistory() 사용
-    routes: [
-        {
-            path: "/",
-            name: "Main",
-            component: Main,
-        }
-    ]
-});
+export default router;
