@@ -28,8 +28,7 @@
         <div class="kakao_login_box">
           <img src="../assets/images/kakao_loginsvg.svg" alt="kakao_login" />
         </div>
-        <h2>or</h2>
-
+        <!-- <h2>or</h2> -->
         <div class="google_login_box">
           <img src="../assets/images/web_light_sq_SI.svg" alt="google_login" />
         </div>

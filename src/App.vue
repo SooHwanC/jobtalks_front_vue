@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     hideTopBannerPath() {
-      return ["/logion", "/join"];
+      return ["/login", "/join"];
     },
   },
 };

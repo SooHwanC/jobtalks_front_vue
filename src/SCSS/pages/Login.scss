@@ -1,7 +1,7 @@
 .login_main_wrapper {
     background-color: var(--main-color);
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
 .login_main {
@@ -14,7 +14,7 @@
     align-items: center;
     color: var(--font-color);
 
-    @media(max-width:600px){
+    @media(max-width:600px) {
         margin-top: 3rem;
         width: 300px;
     }
@@ -35,7 +35,7 @@
 
     .title_wrapper {
         margin-top: 1.5rem;
-        width: 150px;
+        width: 100px;
         text-align: center;
 
         img {
@@ -111,7 +111,9 @@
         margin-top: 2rem;
         align-items: center;
 
-
+        @media(max-width:600px) {
+            gap: 20px;
+        }
 
 
         .kakao_login_box,
