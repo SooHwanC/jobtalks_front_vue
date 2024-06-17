@@ -1,5 +1,5 @@
 <template>
-  <div :data-theme="theme">
+  <div :data-theme="theme" style="height: 100vh;">
     <TopBanner v-if="!hideTopBannerPath.includes($route.path)" />
     <router-view />
   </div>

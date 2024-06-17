@@ -8,18 +8,28 @@
         // width: calc(100% - 250px);
         width: 100%;
         margin-top: 50px;
-        height: calc(100vh - 50px);
+        height: calc(100% - 50px);
+        overflow-y: auto;
 
         @media (max-width: 1370px) {
             width: 100%;
         }
 
+        @media (max-width: 600px) {
+            margin: 0;
+            height: 100%;
+            position: relative;
+        }
 
 
         .ex_content_wrapper {
             display: flex;
             justify-content: center;
             height: calc(100% - 50px);
+
+            @media (max-width: 600px) {
+                height: 95%;
+            }
 
 
             .ex_content_box {
@@ -35,7 +45,7 @@
                 position: relative;
 
                 @media(max-width:600px) {
-                    height: 70%;
+                    margin-top: 70px;
                 }
 
                 .process_wrapper {
@@ -43,6 +53,7 @@
                     justify-content: center;
                     gap: 50px;
                     margin-top: 95px;
+                    height: 50%;
 
                     scroll-snap-type: x mandatory;
                     overflow-x: auto;
@@ -60,10 +71,11 @@
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
                         margin: 1rem 1rem;
+                        height: auto;
                     }
 
                     .process_box {
-                        height: 340px;
+                        // height: 340px;
                         border-radius: 20px;
                         display: flex;
                         flex-direction: column;
@@ -163,7 +175,7 @@
                     }
 
                     img {
-                        height: 60px;
+                        height: 63px;
 
                         @media(max-width:600px) {
                             height: 45px;
@@ -173,6 +185,54 @@
                     a {
                         cursor: pointer;
                     }
+
+                    .ai_start_btn_01 {
+                        position: relative;
+                        width: 200px;
+                        height: 63px;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            position: absolute;
+                            // transition: transform 0.5s ease;
+                        }
+
+                        :nth-child(2) {
+                            height: 40px;
+                            left: 10px;
+
+                            @media (max-width:600px) {
+                                height: 26px;
+                                left: 9px;
+                            }
+                        }
+
+                        &:hover {
+
+                            :nth-child(2) {
+                                animation: spin 1s ease infinite;
+                            }
+                        }
+
+                        @media (max-width:600px) {
+                            width: 150px;
+                            height: 45px;
+                        }
+                    }
+
+                    @keyframes spin {
+                        from {
+                            transform: rotate(0deg);
+                        }
+
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+
+
                 }
 
 
