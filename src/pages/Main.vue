@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="reserved_bo">
+        <div class="reserved_box">
             <p>
                 Copyright ⓒ 2024 persona ai All Rights Reserved
             </p>
