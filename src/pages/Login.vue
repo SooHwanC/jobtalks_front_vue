@@ -9,19 +9,21 @@
             <h1>로그인</h1>
         </div>
 
-        <div class="input_wrapper">
-            <div class="input_box">
-                <h3>아이디</h3>
-                <input type="text" v-model="username" placeholder="아이디를 입력해주세요." />
+        <form @submit.prevent="handleLogin" class="login_form">
+            <div class="input_wrapper">
+                <div class="input_box">
+                    <h3>아이디</h3>
+                    <input type="text" v-model="username" placeholder="아이디를 입력해주세요." />
+                </div>
+                <div class="input_box">
+                    <h3>비밀번호</h3>
+                    <input type="password" v-model="password" placeholder="비밀번호를 입력해주세요." @keyup.enter="handleLogin" />
+                </div>
             </div>
-            <div class="input_box">
-                <h3>비밀번호</h3>
-                <input type="password" v-model="password" placeholder="비밀번호를 입력해주세요." />
+            <div class="submit_btn_box">
+                <div class="submit_btx" @click="handleLogin">로그인</div>
             </div>
-        </div>
-        <div class="submit_btn_box">
-            <div class="submit_btx" @click="handleLogin">로그인</div>
-        </div>
+        </form>
         <div class="social_login_wrapper">
             <div class="kakao_login_box">
                 <img src="../assets/images/kakao_loginsvg.svg" alt="kakao_login" />
@@ -49,17 +51,16 @@ export default {
 
     methods: {
         async handleLogin() {
-          try {
-            const response = await axios.post('http://localhost:8088/member/login',{
-              member_id: this.username,
-              password: this.password
-            });
-            console.log('로그인', response);
+            try {
+                const response = await axios.post('http://localhost:8088/member/login', {
+                    member_id: this.username,
+                    password: this.password
+                });
+                console.log('로그인', response);
 
-
-          } catch (error) {
-            console.error('에러', error)
-          }
+            } catch (error) {
+                console.error('에러', error)
+            }
 
         }
 
