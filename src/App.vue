@@ -1,23 +1,28 @@
 <template>
-  <div :data-theme="theme" style="height: 100vh;">
+<div :data-theme="theme" style="height: 100vh;">
     <TopBanner v-if="!hideTopBannerPath.includes($route.path)" />
     <router-view />
-  </div>
+</div>
 </template>
 
 <script>
 import TopBanner from "./components/TopBanner.vue";
 
 export default {
-  name: "App",
-  components: {
-    TopBanner,
-  },
-  computed: {
-    hideTopBannerPath() {
-      return ["/login", "/join"];
+    name: "App",
+    components: {
+        TopBanner,
     },
-  },
+    data() {
+        return {
+            theme: 'white'
+        }
+    },
+    computed: {
+        hideTopBannerPath() {
+            return ["/login", "/join"];
+        },
+    },
 };
 </script>
 

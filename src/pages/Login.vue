@@ -56,10 +56,19 @@ export default {
                     member_id: this.username,
                     password: this.password
                 });
-                console.log('로그인', response);
+                if (response.status === 200) {
+                    sessionStorage.setItem('member_id', this.username);
+                    alert('로그인 성공');
+                    this.$router.push('/');
+                    
+                }
 
             } catch (error) {
-                console.error('에러', error)
+                if(error.response.status === 404){
+                    alert(error.response.data)
+                } else if (error.response.status === 403){
+                    alert(error.response.data)
+                }
             }
 
         }
