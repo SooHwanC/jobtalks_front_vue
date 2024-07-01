@@ -20,10 +20,7 @@
         </div>
         <div class="input_box">
           <h3>비밀번호 확인</h3>
-          <input
-            type="password"
-            placeholder="비밀번호를 한번 더 입력해주세요."
-          />
+          <input type="password" placeholder="비밀번호를 한번 더 입력해주세요." />
         </div>
       </div>
       <div class="submit_btn_box">
@@ -39,5 +36,4 @@ import "../SCSS/pages/Join.scss";
 export default {};
 </script>
 
-<style>
-</style>
+<style></style>
