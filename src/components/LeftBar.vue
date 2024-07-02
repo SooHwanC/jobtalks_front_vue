@@ -2,12 +2,13 @@
   <div :class="['left_bar', folded ? 'folded' : '']">
     <div class="logo_wrapper">
       <div @click="foldBoxClickHandler" :class="['fold_wrapper', folded ? 'folded' : '']">
-        <img src="../assets/images/hamburger.svg" />
+        <img v-if="theme === 'white'" src="../assets/images/hamburger.svg" />
+        <img v-else src="../assets/images/hamburger_dark.svg" />
       </div>
       <router-link to="/">
         <div class="title_box">
-          <img src="../assets/images/CI_LOGO_BLACK.svg" alt="logo" />
-          <!-- <img src="../assets/images/CI_LOGO_WHITE.svg" alt="logo" /> -->
+          <img v-if="theme === 'white'" src="../assets/images/CI_LOGO_BLACK.svg" alt="logo" />
+          <img v-else src="../assets/images/CI_LOGO_WHITE.svg" alt="logo" />
         </div>
       </router-link>
     </div>
@@ -33,20 +34,37 @@
 </template>
 
 <script>
+import { useStore } from "vuex";
 import "../SCSS/components/LeftBar.scss";
+import { computed, ref } from "vue";
 
 export default {
-  data() {
+  setup() {
+    const store = useStore()
+    const folded = ref(false)
+
+    const theme = computed(() => store.state.theme)
+    const foldBoxClickHandler = () => {
+      folded.value = !folded.value
+    }
     return {
-      folded: false,
-    };
-  },
-  methods: {
-    foldBoxClickHandler() {
-      this.folded = !this.folded;
-      console.log("폴드확인", this.folded);
-    },
-  },
+      theme,
+      folded,
+      foldBoxClickHandler
+    }
+  }
+
+  // data() {
+  //   return {
+  //     folded: false,
+  //   };
+  // },
+  // methods: {
+  //   foldBoxClickHandler() {
+  //     this.folded = !this.folded;
+  //     console.log("폴드확인", this.folded);
+  //   },
+  // },
 };
 </script>
 

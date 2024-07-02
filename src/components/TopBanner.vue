@@ -4,7 +4,7 @@
             <!-- <img src="../assets/images/darkmode.svg" alt="darkmode" /> -->
 
             <label class="ui_switch">
-                <input type="checkbox" @click="handleToggleDarkMode">
+                <input type="checkbox" :checked="isDarkMode" @click="handleToggleDarkMode">
                 <div class="slider">
                     <div class="circle"></div>
                 </div>
@@ -26,16 +26,30 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import "../SCSS/components/TopBanner.scss";
+import { useStore } from "vuex";
 export default {
 
-    methods: {
-        handleToggleDarkMode() {
-            this.$emit('toggle-theme')
-
+    setup() {
+        const store = useStore()
+        const isDarkMode = computed(() => store.state.theme === 'dark')
+        const handleToggleDarkMode = () => {
+            store.dispatch('toggleTheme')
         }
-
+        return {
+            isDarkMode,
+            handleToggleDarkMode
+        }
     }
+
+    // methods: {
+    //     handleToggleDarkMode() {
+    //         this.$emit('toggle-theme')
+
+    //     }
+
+    // }
 
 
 };
