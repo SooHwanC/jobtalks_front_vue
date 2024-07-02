@@ -1,8 +1,8 @@
 <template>
-<div :data-theme="theme" style="height: 100vh;">
-    <TopBanner v-if="!hideTopBannerPath.includes($route.path)" />
-    <router-view />
-</div>
+    <div :data-theme="theme" style="height: 100vh;">
+        <TopBanner v-if="!hideTopBannerPath.includes($route.path)" @toggle-theme="toggleTheme" />  
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -23,8 +23,23 @@ export default {
             return ["/login", "/join"];
         },
     },
+    methods: {
+        toggleTheme() {
+            this.theme = this.theme === 'white' ? 'dark' : "white";
+            localStorage.setItem('theme', this.theme);
+        },
+
+        loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                this.theme = savedTheme
+            }
+        }
+    },
+    mounted() {
+        this.loadTheme();
+    }
 };
 </script>
 
-<style>
-</style>
+<style></style>

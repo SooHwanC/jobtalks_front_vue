@@ -1,15 +1,13 @@
 <template>
   <div :class="['left_bar', folded ? 'folded' : '']">
     <div class="logo_wrapper">
-      <div
-        @click="foldBoxClickHandler"
-        :class="['fold_wrapper', folded ? 'folded' : '']"
-      >
+      <div @click="foldBoxClickHandler" :class="['fold_wrapper', folded ? 'folded' : '']">
         <img src="../assets/images/hamburger.svg" />
       </div>
       <router-link to="/">
         <div class="title_box">
           <img src="../assets/images/CI_LOGO_BLACK.svg" alt="logo" />
+          <!-- <img src="../assets/images/CI_LOGO_WHITE.svg" alt="logo" /> -->
         </div>
       </router-link>
     </div>
@@ -33,8 +31,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import "../SCSS/components/LeftBar.scss";
 
 export default {
@@ -51,7 +49,5 @@ export default {
   },
 };
 </script>
-  
-  <style scoped>
-</style>
-  
+
+<style scoped></style>

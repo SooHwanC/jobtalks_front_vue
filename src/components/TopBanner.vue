@@ -27,7 +27,18 @@
 
 <script>
 import "../SCSS/components/TopBanner.scss";
-export default {};
+export default {
+
+    methods: {
+        handleToggleDarkMode() {
+            this.$emit('toggle-theme')
+
+        }
+
+    }
+
+
+};
 </script>
 
 <style></style>
